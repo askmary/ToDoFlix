@@ -28,10 +28,9 @@ const GlobalStyle = createGlobalStyle`
 `
 const Navbar = styled.nav`
  width:100%;
- height:5em;
+ height:10vh;
  display:flex;
  justify-content:space-between;
- border: 2px solid red;
 `
 const Text = styled.h4`
  cursor:pointer;
@@ -65,6 +64,7 @@ const Btnadd = styled.button`
  width:8.5vw;
  height:4.5vh;
  font-size:0.8rem;
+ cursor:pointer;
 `
 const Search = styled.input`
  background-color:#2C2C2C;
