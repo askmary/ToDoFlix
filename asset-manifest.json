@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/ToDoFlix/static/js/main.d834d951.js",
+    "main.js": "/ToDoFlix/static/js/main.6d92b00e.js",
     "static/js/787.fedb6192.chunk.js": "/ToDoFlix/static/js/787.fedb6192.chunk.js",
     "static/media/Batman.jpg": "/ToDoFlix/static/media/Batman.0487ac766b91c4bb5e17.jpg",
     "index.html": "/ToDoFlix/index.html",
-    "main.d834d951.js.map": "/ToDoFlix/static/js/main.d834d951.js.map",
+    "main.6d92b00e.js.map": "/ToDoFlix/static/js/main.6d92b00e.js.map",
     "787.fedb6192.chunk.js.map": "/ToDoFlix/static/js/787.fedb6192.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.d834d951.js"
+    "static/js/main.6d92b00e.js"
   ]
 }
