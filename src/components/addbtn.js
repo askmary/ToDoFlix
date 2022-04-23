@@ -12,6 +12,7 @@ const Container = styled.div`
   background:pink;
   box-shadow: 0px 3px 6px #00000029;
   border-radius: 10px;
+  z-index:1;
 `
 const Title = styled.h2`
  

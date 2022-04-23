@@ -8,12 +8,12 @@ import Carousel from "react-elastic-carousel"
 const CarouselStyled = {
     itemsToShow:4,
     focusOnSelect:true,
-    enableAutoPlay:false,
+    enableAutoPlay:true,
     autoPlaySpeed:2500,
     pagination: false,
-    showArrows: false,
+    showArrows: true,
     enableMouseSwipe:false,
-    outerSpacing:15
+    outerSpacing:20
 }
 
 const Container = styled.section`
@@ -22,7 +22,7 @@ const Container = styled.section`
 `
 const Subcontainer = styled.div`
  width:78%;
- height:50%;
+ height:48%;
  display:flex;
  justify-content:space-between;
  align-items:center;
@@ -55,7 +55,7 @@ const SubCont = styled.div`
  height:50%;
 `
 const Slide = styled.div`
- width:23vw;
+ width:21vw;
  height:100%;
 `
 const Img = styled.img`
@@ -69,7 +69,7 @@ const Title2 = styled.h2`
 `
 const H2 = styled.h2`
  font-size:16px;
- margin: 0 0 2vh 4vw;
+ margin: 0 0 2vh 6vw;
 `
 const Overview = styled.p`
  font-size:0.8rem;
