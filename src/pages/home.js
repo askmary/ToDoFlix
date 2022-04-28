@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Batman from "../img/Batman.jpg"
 import BtnFav from "../components/favbtn"
 import Carousel from "react-elastic-carousel"
+import MovieState from "../movieState.json"
 
 
 const CarouselStyled = {
@@ -22,7 +23,7 @@ const Container = styled.section`
 `
 const Subcontainer = styled.div`
  width:78%;
- height:48%;
+ height:45%;
  display:flex;
  justify-content:space-between;
  align-items:center;
@@ -57,6 +58,7 @@ const SubCont = styled.div`
 const Slide = styled.div`
  width:21vw;
  height:100%;
+ position:relative;
 `
 const Img = styled.img`
  width:100%;
@@ -74,64 +76,41 @@ const H2 = styled.h2`
 const Overview = styled.p`
  font-size:0.8rem;
 `
+const Btn = styled.button`
+ width:1.7vw;
+ height:3.5vh;
+ border:none;
+ background-color:gray;
+ border-radius:50%;
+ font-size:20px;
+ cursor:pointer;
+ margin:1vh 0 2vh 0;
+ position:absolute;
+ left:19vw;
+ 
+ &:focus{
+    background-color:red;
+}
+`
+const Svg = styled.svg`
+    width:19px;
+    height:20px;
+`
+const NameBox = styled.div`
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+`
+
 export default class App extends React.Component{
     state ={
         batman:{
             title: "Batman",
             overview: "Após dois anos espreitando as ruas como Batman, Bruce Wayne se encontra nas profundezas mais sombrias de Gotham City. Com poucos aliados confiáveis, o vigilante solitário se estabelece como a personificação da vingança para a população.",
+            nota: 5
         },
-        movie:[
-            {
-                title: "Coringa",
-                poster: "https://wp.ufpel.edu.br/empauta/files/2019/10/Coringa.retang.jpg",
-                overview: "Isolado, intimidado e desconsiderado pela sociedade, o fracassado comediante Arthur Fleck inicia seu caminho como uma mente criminosa após assassinar três homens em pleno metrô. Sua ação inicia um movimento popular contra a elite de Gotham City, da qual Thomas Wayne é seu maior representante."
-            },
-            {
-                title: "Hunter x Hunter: The Last Mission",
-                poster:"https://www.justwatch.com/images/backdrop/180763325/s640/hunter-x-hunter-the-last-mission",
-                overview: "Gon e Killua enfrentam inimigos do passado quando Jed aparece decidido a divulgar o histórico de operações secretas dos Hunters."
-            },
-            {
-                title:"Red: Crescer é uma fera",
-                poster: "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/9C2B147C9894D2972A53DE0663537606531C8245E379560BDD384BEDB861515E/scale?width=1200&aspectRatio=1.78&format=jpeg",
-                overview: "Mei é uma garota que vive o auge de seus 13 anos no começo dos anos 2000. Inexplicavelmente, ela passa a se transformar num gigante panda vermelho sempre que fica nervosa ou animada (o que é uma constante)."
-            },
-            {
-                title:"Doutor Estranho no Multiverso da Loucura",
-                poster:"http://disneyplusbrasil.com.br/wp-content/uploads/2022/02/Doutor-Estranho-2.jpg",
-                overview: "Doutor Estranho rumo ao desconhecido. Além de receber ajuda de novos aliados místicos e outros já conhecidos do público, o personagem atravessa as realidades alternativas incompreensíveis e perigosas do Multiverso para enfrentar um novo e misterioso adversário."
-            },
-            {
-                title:"Your Name",
-                poster:"https://wallpapers.com/images/high/kimi-no-na-wa-taki-poster-f16a4cccypn81lzw.jpg",
-                overview: "Mitsuha é a filha do prefeito de uma pequena cidade, mas sonha em tentar a sorte em Tóquio. Taki trabalha em um restaurante em Tóquio e deseja largar o seu emprego. Os dois não se conhecem, mas estão conectados pelas imagens de seus sonhos."
-            },
-            {
-                title:"Bohemian Rhapsody",
-                poster:"https://i2.wp.com/linkezine.com.br/wp-content/uploads/2018/11/bohemian-rhapsody-filme.jpeg?fit=1920%2C1080",
-                overview: "Freddie Mercury, Brian May, Roger Taylor e John Deacon formam a banda de rock Queen em 1970. Quando o estilo de vida agitado de Mercury começa a sair de controle, o grupo precisa encontrar uma forma de lidar com o sucesso e os excessos de seu líder."
-            },
-            {
-                title:"Encanto",
-                poster:"https://www.eusemfronteiras.com.br/wp-content/uploads/2022/02/poster-encanto-e1645042210615-810x504.jpg",
-                overview: "Encanto da Walt Disney Animation Studios conta a história dos Madrigal, uma família extraordinária que vive escondida nas montanhas da Colômbia, em uma casa mágica, em uma cidade vibrante, em um lugar maravilhoso conhecido como um Encanto. "
-            },
-            {
-                title:"Pantera Negra",
-                poster:"https://www.agitossp.com.br/wp-content/uploads/2019/01/panteranegra-696x364.jpg",
-                overview: "Conheça a história de T'Challa, príncipe do reino de Wakanda, que perde o seu pai e viaja para os Estados Unidos, onde tem contato com os Vingadores. Entre as suas habilidades estão a velocidade, inteligência e os sentidos apurados."
-            },
-            {
-                title:"Moana",
-                poster:"https://uploads.jovemnerd.com.br/wp-content/uploads/2016/09/moana-disney-mar-1210x544.jpg",
-                overview:"Uma jovem parte em uma missão para salvar seu povo. Durante a jornada, Moana conhece o outrora poderoso semideus Maui, que a guia em sua busca para se tornar uma mestre em encontrar caminhos."
-            },
-            {
-                title:"Um Lugar Silencioso",
-                poster:"https://i0.wp.com/cinestera.com.br/wp-content/uploads/2019/01/um-lugar-silencioso-cr%C3%ADtca-.jpg?fit=800%2C445&ssl=1",
-                overview:"Em uma fazenda nos Estados Unidos, uma família do Meio-Oeste é perseguida por uma entidade fantasmagórica assustadora. Para se protegerem, eles devem permanecer em silêncio absoluto, a qualquer custo, pois o perigo é ativado pela percepção do som."
-            }
-        ]
+        movie: MovieState
     }
     render(){
         let {batman} = this.state
@@ -144,6 +123,13 @@ export default class App extends React.Component{
                         <Visto>Visto recentemente</Visto>
                         <Title>{batman.title}</Title>
                         <Sinopse>{batman.overview}</Sinopse>
+                        <div style={{width:"60px",height:"35px",display:"flex",alignItems:"center",justifyContent:"center"}}>
+                                    <p style={{padding:"1vh 0.5vw 0 0vw"}}>{this.state.batman.nota}/5</p>
+                                    <Svg style={{margin:"0.5vh 0.5vw 0 0"}} id="Icon_Thumbs_Up_Filled" data-name="Icon / Thumbs Up / Filled" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
+                                        <rect id="Box" width="17" height="17" fill="none" />
+                                        <path id="Path_1994" data-name="Path 1994" d="M97-8.286h2.805v-8.229H97Zm15.429-7.543a1.391,1.391,0,0,0-1.4-1.371H106.6l.666-3.134.021-.219a1.021,1.021,0,0,0-.309-.727l-.743-.72-4.615,4.519a1.326,1.326,0,0,0-.414.967v6.857a1.391,1.391,0,0,0,1.4,1.371h6.312a1.394,1.394,0,0,0,1.29-.837l2.118-4.834a1.328,1.328,0,0,0,.1-.5v-1.31l-.007-.007Z" transform="translate(-96.143 23.714)" fill="white" style={this.state.batman.nota >= 5 ? { fill: '#0B3B0B' } : this.state.batman.nota === 4 ? { fill: '#64FE2E' } : this.state.batman.nota === 3 ? { fill: 'yellow' } : { fill: 'red' }} />
+                                    </Svg>
+                        </div>
                     </Div>
                 </Subcontainer>
                 <SubCont>
@@ -151,8 +137,18 @@ export default class App extends React.Component{
                     <Carousel {...CarouselStyled}>
                         {this.state.movie.map((item) => (
                             <Slide>
+                                <Btn>&#10084;</Btn>
                                 <Img src={item.poster} alt={`Capa do filme ${item.title}`}/>
+                                <NameBox >
                                 <Title2>{item.title}</Title2>
+                                <div style={{width:"60px",height:"35px",display:"flex",alignItems:"center",justifyContent:"center"}}>
+                                    <p style={{padding:"0 0.5vw 0 0.5vw"}}>{item.nota}/5</p>
+                                    <Svg style={{padding:"0 0vw 0.5vh 0"}} id="Icon_Thumbs_Up_Filled" data-name="Icon / Thumbs Up / Filled" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
+                                        <rect id="Box" width="17" height="17" fill="none" />
+                                        <path id="Path_1994" data-name="Path 1994" d="M97-8.286h2.805v-8.229H97Zm15.429-7.543a1.391,1.391,0,0,0-1.4-1.371H106.6l.666-3.134.021-.219a1.021,1.021,0,0,0-.309-.727l-.743-.72-4.615,4.519a1.326,1.326,0,0,0-.414.967v6.857a1.391,1.391,0,0,0,1.4,1.371h6.312a1.394,1.394,0,0,0,1.29-.837l2.118-4.834a1.328,1.328,0,0,0,.1-.5v-1.31l-.007-.007Z" transform="translate(-96.143 23.714)" fill="white" style={item.nota >= 5 ? { fill: '#0B3B0B' } : item.nota === 4 ? { fill: '#64FE2E' } : item.nota === 3 ? { fill: 'yellow' } : { fill: 'red' }} />
+                                    </Svg>
+                                </div>
+                            </NameBox>
                                 <Overview>{item.overview}</Overview>
                             </Slide>
                         ))}

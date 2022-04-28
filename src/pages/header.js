@@ -93,9 +93,7 @@ export default class App extends React.Component{
           <Container2>
             <Btnadd onClick={this.handleModalBtn}>Adicionar filme</Btnadd>
              {this.state.stateBtnModal && <ModalBtn/>}
-             <StyledLink to="/todos">
                <Search type="text" placeholder="Pesquisar"/>
-              </StyledLink>
             <img src={User} alt="usuario"/>
             <img src={Seta} alt="seta"/>
           </Container2>

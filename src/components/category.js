@@ -12,6 +12,7 @@ const Container = styled.div`
  top:8vh;
  left:19.5vw;
  background:black;
+ z-index:5;
 `
 const ListModal = styled.ul`
  list-style:none;
